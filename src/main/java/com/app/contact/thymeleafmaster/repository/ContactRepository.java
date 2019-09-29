@@ -1,0 +1,10 @@
+package com.app.contact.thymeleafmaster.repository;
+
+import com.app.contact.thymeleafmaster.model.Contact;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ContactRepository extends MongoRepository<Contact, String> {
+
+}
