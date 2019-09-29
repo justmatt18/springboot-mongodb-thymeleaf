@@ -9,7 +9,9 @@ A mini-project to explore on how to use Spring Boot with Server-Side template En
 * Postman -> Testing Controllers
 
 
-### Collection -> **springboot**
+#### MongoDB Setup
+1. Create database in MongoDB -> **springboot**
+2. Collection -> **contacts**
 
 ```
 {
