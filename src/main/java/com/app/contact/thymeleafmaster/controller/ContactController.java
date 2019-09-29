@@ -24,12 +24,6 @@ public class ContactController {
         this.contactService = contactService;
     }
 
-    //    @GetMapping("/")
-//    public String index(Model model) {
-//        String greet = "Hello World";
-//        model.addAttribute("greet", greet);
-//        return "index";
-//    }
 
     @GetMapping("/")
     public String list(Model model) {

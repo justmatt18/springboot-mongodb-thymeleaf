@@ -51,7 +51,15 @@ public class ContactApi {
         return contactService.list();
     }
 
+    @GetMapping("/status/{status}")
+    public List<Contact> listByStatus(@PathVariable String status) {
+//        String stat = status.toUpperCase();
+        return contactService.findByStatus(status.toUpperCase());
+    }
 
-
+    @GetMapping("/group/{group}")
+    public List<Contact> listByGroup(@PathVariable String group) {
+        return contactService.findByGroup(group.toUpperCase());
+    }
 
 }

@@ -46,11 +46,11 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public List<Contact> findByStatus(String status) {
-        return null;
+        return contactRepository.findByContactStatus(status);
     }
 
     @Override
     public List<Contact> findByGroup(String group) {
-        return null;
+        return contactRepository.findByContactStatus(group);
     }
 }
