@@ -5,19 +5,16 @@ import com.app.contact.thymeleafmaster.enums.ContactStatus;
 import com.app.contact.thymeleafmaster.form.ContactUpdateForm;
 import com.app.contact.thymeleafmaster.model.Contact;
 import com.app.contact.thymeleafmaster.service.ContactService;
-import com.sun.prism.impl.Disposer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class ContactController {
-
-
     private final ContactService contactService;
 
     public ContactController(ContactService contactService) {
@@ -53,14 +50,14 @@ public class ContactController {
     }
 
     @PostMapping("/update/{id}")
-    public String updateContact(@PathVariable String id, ContactUpdateForm form, Model model) {
+    public String updateContact(@PathVariable String id, ContactUpdateForm form) {
         contactService.updateContact(id, new Contact(form.getName(), form.getNumber(), form.getContactGroup(), form.getContactStatus()));
         return "redirect:/";
     }
 
 
     @GetMapping("/delete/{id}")
-    public String deleteContact(Model model, @PathVariable String id) {
+    public String deleteContact(@PathVariable String id) {
         contactService.deleteContact(id);
         return "redirect:/";
     }

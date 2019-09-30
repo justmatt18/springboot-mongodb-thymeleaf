@@ -7,7 +7,6 @@ import com.app.contact.thymeleafmaster.form.ContactCreateForm;
 import com.app.contact.thymeleafmaster.form.ContactUpdateForm;
 import com.app.contact.thymeleafmaster.model.Contact;
 import com.app.contact.thymeleafmaster.service.ContactService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -17,8 +16,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("api/contacts")
 public class ContactApi {
-
-
     private final ContactService contactService;
 
     public ContactApi(ContactService contactService) {

@@ -51,6 +51,6 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public List<Contact> findByGroup(String group) {
-        return contactRepository.findByContactStatus(group);
+        return contactRepository.findByContactGroup(group);
     }
 }
